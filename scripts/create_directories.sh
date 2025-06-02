@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+set -e
+
+dirs=(
+  "ansible"
+  "ansible/roles"
+  "ansible/group_vars"
+  "docs"
+  "docs/diagrams"
+  "docs/inventory"
+  "docs/integration"
+  "docs/usage-guides"
+  "docs/usage-guides/management"
+    "docs/usage-guides/monitoring"
+    "docs/usage-guides/observability"
+    "docs/usage-guides/alerting"
+    "docs/usage-guides/backup"
+    "docs/usage-guides/chaos-engineering"
+    "docs/usage-guides/security"
+    "docs/usage-guides/flux"
+  "docs/troubleshooting"
+  "infrastructure"
+  "infrastructure/terraform"
+  "infrastructure/terraform/modules"
+  "infrastructure/terraform/modules/proxmox-vm"
+  "infrastructure/terraform/modules/network"
+  "infrastructure/terraform/modules/kubernetes-cluster"
+  "infrastructure/terraform/environments"
+  "infrastructure/terraform/environments/onprem"
+  "infrastructure/terraform/environments/cloud-burst"
+  "infrastructure/ansible"
+  "infrastructure/ansible/roles"
+  "infrastructure/ansible/group_vars"
+  "network"
+  "network/diagrams"
+  "network/keepalived"
+  "clusters"
+  "clusters/onprem"
+  "clusters/onprem/flux-system"
+  "clusters/onprem/base"
+  "clusters/onprem/apps"
+  "clusters/onprem/core"
+  "clusters/onprem/infrastructure"
+  "apps"
+  "charts"
+  "docker"
+  "kubernetes"
+  "scripts"
+  ".taskfiles"
+  ".taskfiles/dev"
+  ".taskfiles/staging"
+  ".taskfiles/prod"
+  "chaos"
+  "chaos/experiments"
+  "policies"
+  ".github"
+  ".github/workflows"
+  ".github/templates"
+)
+
+for dir in "${dirs[@]}"; do
+  echo "Creating directory: $dir"
+  # Create the directory and a .gitkeep file to ensure it's tracked by git
+  # even if it's empty
+  mkdir -p "$dir"
+
+  echo "Creating .gitkeep in $dir"
+  touch "$dir/.gitkeep"
+done
+
+touch "Taskfile.yaml"
+
+git init
+echo "Git repository initialized."
+echo "Directories and .gitkeep files created successfully."
