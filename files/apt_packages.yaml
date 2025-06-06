@@ -1,0 +1,55 @@
+# =====================================================================================================
+#                                            APT Packages
+# =====================================================================================================
+# This file contains a list of APT packages to be installed on the system.
+# It is used to automate the installation of necessary software and tools.
+# Intended for use with Ansible or similar automation tools.
+# =====================================================================================================
+# Last Updated: 2025-06-03
+# =====================================================================================================
+
+packages:
+  development_tools:
+    - build-essential      # Essential compilation tools (gcc, make, etc.)
+    - git                  # Version control system
+    - curl                 # Command-line transfer utility
+    - wget                 # Network downloader
+    - vim                  # Vi Improved text editor
+    - nano                 # Simple text editor
+    - htop                 # Interactive process viewer
+
+  utilities:
+    - unzip                # Decompression tool for .zip
+    - zip                  # Compression tool for .zip
+    - tar                  # Archiving utility
+    - jq                   # Command-line JSON processor
+    - locate               # Find files by name
+
+  networking:
+    - net-tools            # Basic networking utilities (ifconfig, netstat)
+    - iputils-ping         # Ping utility
+    - traceroute           # Network diagnostic tool
+    - dnsutils             # DNS lookup utilities (dig, nslookup)
+    - nmap                 # Network exploration tool
+    - openssh-client       # SSH client
+    - openssh-server       # SSH server
+
+  security:
+    - fail2ban             # Intrusion prevention tool
+    - unattended-upgrades  # Automatic installation of security updates
+    - apparmor             # Mandatory access control framework
+    - openssl             # Toolkit for SSL/TLS
+    - gpg                  # GNU Privacy Guard for encryption and signing
+
+  system_tools:
+    - tmux                 # Terminal multiplexer
+    - screen               # Terminal multiplexer
+    - lsof                 # List open files
+    - sysstat              # Performance monitoring tools (iostat, mpstat)
+
+
+  misc:
+    - tree                 # Directory listing utility
+    - cowsay               # Fun ASCII art utility
+    - lolcat               # Rainbow colored text output
+

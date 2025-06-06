@@ -1,0 +1,24 @@
+# go-task file
+# $schema: "https://raw.githubusercontent.com/go-task/taskfile/master/taskfile.schema.json"
+
+version: "3"
+
+vars:
+  # Directories
+  ANSIBLE_DIR: '{{.ROOT_DIR}}/ansible'
+  TERRAFORM_DIR: '{{.ROOT_DIR}}/terraform'
+  KUBERNETES_DIR: '{{.ROOT_DIR}}/kubernetes'
+  TASKFILE_DIR: '{{.ROOT_DIR}}/.taskfiles'
+  
+  # Files
+  KUBECONFIG_FILE: '{{.ROOT_DIR}}/kubeconfig'
+  SOPS_AGE_KEY_FILE: '{{.ROOT_DIR}}/keys/encryption/.age.key'
+  SOPS_CONFIG_FILE: '{{.ROOT_DIR}}/.sops.yaml'
+
+tasks:
+  init:
+    desc: "Initialize repository dependencies"
+    cmds:
+      - dos2unix scripts/repo/init.sh
+      - chmod +x scripts/repo/init.sh
+      - scripts/repo/init.sh

@@ -35,6 +35,7 @@ override.tf
 venv/
 env/
 __pycache__/
+.venv/
 
 # ==========================
 # Go-Task

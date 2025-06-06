@@ -1,0 +1,47 @@
+# ==============================================================================
+#                          Pipfile — SinLess‑Games‑IaC
+# ------------------------------------------------------------------------------
+# Managed by *pipenv* (or Poetry‑compatible¹).  Mirrors the packages kept in
+# files/requirements.txt, but with locked‑in virtual‑env metadata that is a bit
+# friendlier for interactive development.
+# ------------------------------------------------------------------------------
+# ¹ Poetry can read Pipfiles via `poetry add --pipfile`. If you prefer Poetry,
+#   the lock‑file will be regenerated automatically.
+# ------------------------------------------------------------------------------
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+# Align with the repo's tooling; tweak to the lowest version you officially
+# support. Anything >=3.10 is generally fine.
+python_version = "3.13"
+
+[packages]
+# ---------------------------------------------------------------------------
+# Core IaC / Dev‑Ops helpers
+# ---------------------------------------------------------------------------
+ansible = ">=11.6.0" # Playbook runner for provisioning / config‑mgmt
+ansible-lint = "*" # Enforce best‑practices in playbooks & roles
+jinja2 = ">=3.1.6" # Template engine used by Ansible & helper scripts
+pyyaml = ">=6.0.2" # YAML parsing & emission (requirements.yml, etc.)
+# ---------------------------------------------------------------------------
+# CLI / automation utilities used across helper scripts (optional — feel free
+# to cull anything you don't actually need in the repo).
+# ---------------------------------------------------------------------------
+click = "*" # Build friendly CLI wrappers around Python tools
+rich = "*" # Colourful, formatted console output
+python-dotenv = "*" # Load .env files when running local helpers
+
+# ---------------------------------------------------------------------------
+# [dev] section → test & lint only ( *not* vendored in production containers )
+# ---------------------------------------------------------------------------
+[dev-packages]
+black = "*"
+ruff = "*" # Fast Python linter (flake8 compatible)
+pytest = "*" # Unit‑testing framework
+pre-commit = "*" # Manages git pre‑commit hooks (runs black/ruff, etc.)
+# ---------------------------------------------------------------------------
+# End of file — run `pipenv install --dev` to recreate the virtual‑env.
+# ===========================================================================

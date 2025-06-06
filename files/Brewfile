@@ -1,0 +1,78 @@
+# ==========================================================================
+#                             Homebrew Brewfile
+# ==========================================================================
+#
+# This Brewfile is used to manage Homebrew packages, casks, and taps.
+# It is designed to be used with the Homebrew package manager on macOS and Linux.
+# To use this Brewfile, run:
+#   brew bundle --file=files/Brewfile
+#
+# Last updated: 2025-06-03
+# =================================================================
+#                            Homebrew Taps
+# =================================================================
+tap "fluxcd/tap"      # FluxCD CLI repository
+tap "hashicorp/tap"   # HashiCorp tools repository
+
+# =================================================================
+#                            Homebrew Casks
+# =================================================================
+
+# (Add any casks below, if needed)
+
+# =================================================================
+#                            Homebrew Formulae
+# =================================================================
+
+# Repository Tools
+brew "git"            # Version control system
+brew "gh"             # GitHub CLI for managing GitHub repositories
+brew "go-task"        # Task runner for developers
+
+# Security Tools
+brew "gpg"            # GNU Privacy Guard for encryption and signing
+brew "age"            # Simple, modern encryption tool
+brew "sops"           # Secrets management for Kubernetes and other systems
+
+# Development Tools
+brew "kubectl"        # Kubernetes command-line tool
+brew "kustomize"      # Tool for customizing Kubernetes YAML configurations
+brew "helm"           # Package manager for Kubernetes applications
+brew "flux"           # GitOps tool for managing Kubernetes clusters
+
+# Infrastructure & IaC
+brew "hashicorp/tap/vault"         # HashiCorp Vault CLI for secrets management
+brew "hashicorp/tap/consul"        # HashiCorp Consul CLI for service discovery
+
+# Storage & Docker
+brew "mc"             # MinIO Client for S3-compatible storage
+brew "docker"         # Docker container runtime
+brew "docker-compose" # Docker Compose for defining multi-container apps
+
+# Observability & Utility Tools
+brew "k9s"            # Kubernetes CLI to navigate, observe, and manage applications
+brew "jq"             # Command-line JSON processor
+brew "yq"             # Command-line YAML processor
+brew "tree"           # Directory listing with indentation
+brew "dos2unix"       # Convert DOS line endings to Unix
+
+# Shell & Productivity
+brew "zsh"            # Z shell
+brew "starship"       # Fast and customizable shell prompt
+brew "git-flow-avh"    # GitFlow implementation (actively maintained fork)
+
+# DNS & Networking
+brew "net-tools"      # Linux networking base tools (if on Linux)
+brew "bind"           # BIND DNS utilities (dig, nslookup, etc.)
+brew "nmap"           # Network exploration and security auditing
+brew "wget"           # Network downloader utility
+brew "curl"           # Command-line tool for transferring data with URLs
+
+# Code Quality & Pre-commit Hooks
+brew "pre-commit"     # Framework for managing pre-commit hooks
+# commitlint (install via npm after Node.js: `npm install -g @commitlint/cli @commitlint/config-conventional`)
+
+# Python & Node.js Runtimes (for pre-commit and other tools)
+brew "python"         # Python 3 interpreter
+brew "node"           # Node.js JavaScript runtime
+brew "pipx"           # Tool to install Python applications in isolated environments
