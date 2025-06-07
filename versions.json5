@@ -1,0 +1,32 @@
+{
+  Version: "0.0.1",
+  // Kubernetes Apps IaC (managed by Fluxcd)
+  // https://fluxcd.io/flux/
+  Apps: {},
+  // Kubernetes Clusters (managed by Fluxcd)
+  // https://fluxcd.io/flux/
+  Clusters: {},
+
+  // Ansible Playbooks and Roles
+  // https://docs.ansible.com/ansible/latest/index.html
+  Ansible: {},
+
+  // Terraform
+  // Terraform is an open-source infrastructure as code software tool created by HashiCorp.
+  // https://www.terraform.io/docs/index.html
+  Terraform: {},
+
+  // Policies and Rules
+  // Open Policy Agent (OPA) is a general-purpose policy engine that enables unified policy enforcement across the stack.
+  // https://www.openpolicyagent.org/docs/latest/
+  Policies: {},
+
+  // Documentation
+  // Repository documentation and guides
+  // https://www.terraform.io/docs/index.html
+  Documentation: {},
+
+  // Development docker compose files and Dockerfiles
+  // Docker Compose is a tool for defining and running multi-container Docker applications.
+  Docker: {},
+}
